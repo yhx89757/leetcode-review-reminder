@@ -4,6 +4,7 @@
   "description": "VSCode extension that reminds you to review LeetCode questions",
   "version": "0.0.1",
   "publisher": "HaoxuanYang",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.97.0"
   },
