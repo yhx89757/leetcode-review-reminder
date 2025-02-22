@@ -1,0 +1,73 @@
+{
+  "name": "leetcode-review-reminder",
+  "displayName": "LeetCode Review Reminder",
+  "description": "VSCode extension that reminds you to review LeetCode questions",
+  "version": "0.0.1",
+  "publisher": "HaoxuanYang",
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yhx89757/leetcode-review-reminder"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "leetcode-review-reminder.checkReviews",
+        "title": "Check LeetCode Reviews",
+        "category": "LeetCode Review"
+      }
+    ],
+    "configuration": {
+      "title": "LeetCode Review Reminder",
+      "properties": {
+        "leetcodeReviewReminder.reviewFilePath": {
+          "type": "string",
+          "default": "TODAY_REVIEW.md",
+          "description": "Path to the review file relative to workspace root"
+        },
+        "leetcodeReviewReminder.supportedExtensions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            ".py",
+            ".js",
+            ".java"
+          ],
+          "description": "File extensions to search for LeetCode solutions"
+        }
+      }
+    }
+  },
+  "main": "./dist/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "webpack",
+    "package": "npx vsce package",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.97.0",
+    "@typescript-eslint/eslint-plugin": "^8.22.0",
+    "@typescript-eslint/parser": "^8.22.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "@vscode/vsce": "^3.2.2",
+    "eslint": "^9.19.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
